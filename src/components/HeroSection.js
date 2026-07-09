@@ -5,8 +5,12 @@ import { Download, ChevronRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { DiskPackingHero } from "./DiskPackingHero";
 import { Button } from "@/components/ui/button";
+import { useI18n } from "@/lib/i18n-context";
+import { getAssetUrl } from "@/lib/utils/assets";
 
 export function HeroSection() {
+  const { dict } = useI18n();
+
   const handleScrollTo = (e, targetId) => {
     e.preventDefault();
     const elem = document.querySelector(targetId);
@@ -35,7 +39,7 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-[clamp(2.2rem,7.5vh,4.25rem)] font-extrabold tracking-tight text-text-primary mb-[clamp(0.5rem,1.8vh,1.25rem)]"
         >
-          Fabián Henry Vilaxa
+          {dict.hero.title}
         </motion.h1>
 
         <motion.h2
@@ -44,11 +48,11 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-[clamp(0.95rem,2.2vh,1.25rem)] text-text-muted mb-[clamp(1rem,2.5vh,2rem)] max-w-2xl text-balance"
         >
-          Ingeniero Civil en Informática. Especializado en{" "}
+          {dict.hero.subtitle}
           <span className="text-text-primary font-medium">
-            Backend, Cloud Computing y DevOps.
-          </span>{" "}
-          Me encanta innovar y hacer que las cosas funcionen solas una vez las construyo.
+            {dict.hero.highlight}
+          </span>
+          {dict.hero.subtitle2}
         </motion.h2>
 
         <motion.div
@@ -62,7 +66,7 @@ export function HeroSection() {
             className="w-full sm:w-auto group px-8 py-6 rounded-lg bg-text-primary text-bg-surface hover:bg-text-primary/90 shadow-lg shadow-text-primary/10"
           >
             <a href="#work" onClick={(e) => handleScrollTo(e, "#work")}>
-              <span>Ve mis Proyectos</span>
+              <span>{dict.hero.viewProjects}</span>
               <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>
@@ -73,11 +77,11 @@ export function HeroSection() {
             className="w-full sm:w-auto px-8 py-6 rounded-lg"
           >
             <a
-              href="/Fabian_Henry_CV.pdf"
+              href={getAssetUrl("/Fabian_Henry_CV.pdf")}
               download="Fabian_Henry_CV.pdf"
             >
               <Download className="w-4 h-4 mr-2" />
-              <span>Descarga mi CV</span>
+              <span>{dict.hero.downloadCV}</span>
             </a>
           </Button>
         </motion.div>

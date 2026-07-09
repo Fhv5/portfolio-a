@@ -1,0 +1,126 @@
+{
+  "navbar": {
+    "about": "About me",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Fabián Henry Vilaxa",
+    "subtitle": "Software Engineer. Specialized in ",
+    "highlight": "Backend, Cloud Computing, and DevOps.",
+    "subtitle2": " I love innovating and making things run on their own once I build them.",
+    "viewProjects": "View my Projects",
+    "downloadCV": "Download my CV"
+  },
+  "about": {
+    "title": "About me",
+    "p1_1": "Hello! I am ",
+    "p1_2": ", a Software Engineer with a focus on ",
+    "p1_3": ", ",
+    "p1_4": " and ",
+    "p1_5": ". I graduated with Highest Honors from the Universidad de Tarapacá, where I also worked as a teaching assistant for various courses.",
+    "p2_1": "I was recently selected as one of the scholars for the ",
+    "p2_2": " program, and I am currently pursuing certifications in ",
+    "p2_3": " and ",
+    "p2_4": " to expand my horizons. In parallel, I am exploring the use of AI in applications with ",
+    "p2_5": " and ",
+    "p2_6": ".",
+    "p3": "Outside of coding: I read, play guitar (electric, of course), work out, ride my bike around the city, and occasionally dive into computational geometry problems. In fact, my thesis was about that.",
+    "funFactsTitle": "FUN FACTS",
+    "funFacts": [
+      "I had 9 cats when I was little. Now I'm allergic to them.",
+      "I studied psychology for a year and a half before switching to computer science.",
+      "I'm not a fan of math, but my thesis was pure hard math.",
+      "Self-proclaimed best Age of Mythology player in Iquique.",
+      "With the exception of pizza, I don't really like Italian food.",
+      "I think I would be a good singer.",
+      "I can play Ka$cade by Animals as Leaders at 80% speed."
+    ],
+    "weaponsTitle": "MY FAVORITE WEAPONS",
+    "seeMore": "See more",
+    "seeLess": "See less",
+    "hide": "Hide",
+    "more": "more"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "The ones I'm most proud of",
+    "viewMore": "Check out the rest",
+    "pageTitle": "My Projects",
+    "pageSubtitle": "An honest record of my technical developments, scientific research,  utilities, and personal projects.",
+    "backHome": "Back to home",
+    "searchPlaceholder": "Search by name, technology, or role...",
+    "clear": "Clear",
+    "notFound": "No projects found",
+    "searchHint": "Try searching for keywords like \"Spring Boot\", \"React\", \"Zustand\", or \"TypeScript\"",
+    "dialogStatus": "Status:",
+    "dialogContext": "Context and Description",
+    "dialogChallenge": "Technical Challenge / Decisions",
+    "dialogFeatures": "Key Features",
+    "dialogStack": "Tech Stack",
+    "viewGithub": "View on GitHub",
+    "viewDemo": "View Demo"
+  },
+  "experience": {
+    "title": "Experience & Education",
+    "subtitle": "What I've been up to lately",
+    "items": [
+      {
+        "title": "Software Engineer",
+        "company": "ValVilax",
+        "location": "Iquique, Chile",
+        "date": "Mar. 2026 – Present",
+        "badge": "Freelance",
+        "description": [
+          "Technical leadership in the full lifecycle of a booking management PWA.",
+          "Efficient implementation with GraalVM (<100MB RAM, startup in ms), embedded SQLite, and Flyway migrations.",
+          "Low-cost deployment on AWS EC2 and Cloudflare Pages, with Nginx security (SSL, Rate Limiting).",
+          "Zero Downtime from launch to production."
+        ]
+      },
+      {
+        "title": "Trainee Developer and Analyst",
+        "company": "National Technology Coordination, MINEDUC",
+        "location": "Remote, Santiago, Chile",
+        "date": "Jan. 2026 – Mar. 2026",
+        "badge": "Internship",
+        "description": [
+          "Design and implementation of a solution to mitigate critical security vulnerabilities in Spring Boot & Vue microservices.",
+          "Resolution of technical debt in SonarQube and implementation of test automation with >93% coverage.",
+          "Preparation and execution of QA plans for newly implemented features.",
+          "End-to-end management of agile requirements: stakeholder gathering, BPMN modeling, and leadership in technical and business refinements."
+        ]
+      },
+      {
+        "title": "Backup Administrative Support",
+        "company": "Asesorías Arsbyr",
+        "location": "Providencia, Santiago, Chile",
+        "date": "Dec. 2023 – Mar. 2024",
+        "badge": "Internship",
+        "description": [
+          "Responsible for ensuring operational continuity by managing corporate backup platforms (Veeam, Data Protector, NetVault, vRanger).",
+          "Proactive management of incidents and recoveries of files and virtual machines for multiple clients.",
+          "Development of Python pipelines for extraction, processing, and visualization of backup and tape data for cycle optimization.",
+          "Standardization of technical documentation for backup monitoring in NetVault to improve the quality of SLAs."
+        ]
+      },
+      {
+        "title": "BSc in Computer Science",
+        "company": "Universidad de Tarapacá",
+        "location": "Iquique, Chile",
+        "date": "2020 – 2026",
+        "description": [
+          "Graduated with Highest Honors (GPA 6.5 / 7.0).",
+          "Speaker at the 1st Student Engineering Congress (CEI 2024). Presented the first success case of agile methodologies (Scrum) implementation in the academic training at the Iquique Campus.",
+          "Teaching Assistant for Web Technologies, Advanced Programming, and Operations Research.",
+          "Occasionally invited to give talks."
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "If you want to build, optimize, or just do something together, hit me up. I would appreciate it if it wasn't to offer me a phone plan switch."
+  }
+}

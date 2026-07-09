@@ -3,69 +3,26 @@
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap } from "lucide-react";
 import Image from "next/image";
+import { useI18n } from "@/lib/i18n-context";
+import { getAssetUrl } from "@/lib/utils/assets";
 
 export function ExperienceTimeline() {
-  const experiences = [
-    {
-      type: "work",
-      title: "Ingeniero de Software",
-      company: "ValVilax",
-      location: "Iquique, Chile",
-      date: "Mar. 2026 – Presente",
-      logo: "/valvilax_logo.png",
-      badge: "Freelance",
-      description: [
-        "Liderazgo técnico en ciclo de vida completo de PWA para la gestión de reservas.",
-        "Implementación eficiente con GraalVM (<100MB RAM, arranque en ms), SQLite embebido y migraciones Flyway.",
-        "Despliegue Low Cost en AWS EC2 y Cloudflare Pages, con seguridad Nginx (SSL, Rate Limiting).",
-        "Cero Downtime desde lanzamiento a producción.",
-      ],
-    },
-    {
-      type: "work",
-      title: "Desarrollador y Analista Trainee",
-      company: "Coordinación Nacional de Tecnología, MINEDUC",
-      location: "Remoto, Santiago, Chile",
-      date: "Ene. 2026 – Mar. 2026",
-      logo: "/mineduc_logo.jpg",
-      badge: "Práctica Profesional",
-      description: [
-        "Diseño e implementación de solución para mitigar vulnerabilidades críticas de seguridad en microservicios Spring Boot & Vue.",
-        "Resolución de deuda técnica en Sonarqube e implementación de automatización de pruebas con cobertura >93%.",
-        "Elaboración y ejecución del planes QA para funcionalidades recientemente implementadas.",
-        "Gestión end-to-end de requerimiento ágil: levantamiento con stakeholders, modelado BPMN y liderazgo de refinamientos técnicos y de negocio.",
-      ],
-    },
-    {
-      type: "work",
-      title: "Soporte Administrativo de Respaldos",
-      company: "Asesorías Arsbyr",
-      location: "Providencia, Santiago, Chile",
-      date: "Dic. 2023 – Mar. 2024",
-      logo: "/arsbyr_logo.jpg",
-      badge: "Práctica Profesional",
-      description: [
-        "Responsable de garantizar la continuidad operacional gestionando plataformas de respaldo corporativas (Veeam, Data Protector, NetVault, vRanger).",
-        "Gestión proactiva de incidencias y recuperaciones de archivos y maquinas virtuales para múltiples clientes.",
-        "Desarrollo de pipelines en Python para la extracción, procesamiento y visualización de datos de backups y cintas para optimización de ciclos.",
-        "Estandarización de documentación técnica para el monitoreo de respaldos en NetVault para mejorar la calidad de los SLAs.",
-      ],
-    },
-    {
-      type: "education",
-      title: "Ingeniero Civil en Informática",
-      company: "Universidad de Tarapacá",
-      location: "Iquique, Chile",
-      date: "2020 – 2026",
-      logo: "/university_of_tarapaca_logo.png",
-      description: [
-        "Graduado con Máxima Distinción (Nota 6.5 / 7.0).",
-        "Speaker en el 1er Congreso Estudiantil de Ingeniería (CEI 2024). Presenté el primer caso de éxito de implementación de metodologías ágiles (Scrum) en la formación académica de la Sede Iquique",
-        "Ayudante de Tecnologías Web, Programación Avanzada e Investigación Operativa.",
-        "A veces me invitan a dar charlas."
-      ],
-    },
-  ];
+  const { dict } = useI18n();
+  const experiences = dict.experience.items.map((item, i) => {
+    // Add logos based on index since dictionaries shouldn't really hardcode UI assets,
+    // or we can map them statically here since the order is fixed.
+    const logos = [
+      "/valvilax_logo.png",
+      "/mineduc_logo.jpg",
+      "/arsbyr_logo.jpg",
+      "/university_of_tarapaca_logo.png"
+    ];
+    return {
+      ...item,
+      type: i === 3 ? "education" : "work", // Last one is education
+      logo: logos[i]
+    };
+  });
 
   return (
     <section id="experience" className="py-[clamp(5rem,6vw,7rem)] px-6 lg:px-8 bg-bg-surface">
@@ -77,10 +34,10 @@ export function ExperienceTimeline() {
           className="mb-[clamp(3.5rem,4vw,4.5rem)] text-center"
         >
           <h2 className="text-[clamp(1.75rem,4.5vh,2.5rem)] font-extrabold tracking-tight flex items-center justify-center mb-[clamp(0.75rem,2.5vh,1.5rem)] leading-tight">
-            <span className="text-accent py-1">Experiencia y Estudios</span>
+            <span className="text-accent py-1">{dict.experience.title}</span>
           </h2>
           <p className="text-[clamp(0.95rem,1.2vw,1.1rem)] text-text-muted max-w-2xl mx-auto leading-relaxed">
-            En lo que he estado últimamente
+            {dict.experience.subtitle}
           </p>
         </motion.div>
 
@@ -107,7 +64,7 @@ export function ExperienceTimeline() {
                   {exp.logo && (
                     <div className="shrink-0 flex items-center">
                       <Image
-                        src={exp.logo}
+                        src={getAssetUrl(exp.logo)}
                         alt={exp.company}
                         width={96}
                         height={96}

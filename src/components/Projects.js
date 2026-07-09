@@ -5,11 +5,15 @@ import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { projects } from "@/data/projects";
+import { projectsData } from "@/data/projects";
 import { ProjectDetailDialog } from "@/components/ProjectDetailDialog";
+import { useI18n } from "@/lib/i18n-context";
+import { getAssetUrl } from "@/lib/utils/assets";
 
 export function CaseStudies() {
   const [selectedCase, setSelectedCase] = useState(null);
+  const { dict, lang } = useI18n();
+  const projects = projectsData[lang];
 
   // Filter only featured projects for the Home Page
   const featuredProjects = projects.filter((p) => p.featured);
@@ -24,10 +28,10 @@ export function CaseStudies() {
           className="mb-[clamp(3.5rem,4vw,4.5rem)] text-center"
         >
           <h2 className="text-[clamp(1.75rem,4.5vh,2.5rem)] font-extrabold tracking-tight flex items-center justify-center mb-[clamp(0.75rem,2.5vh,1.5rem)] leading-tight text-balance">
-            <span className="text-accent py-1">Proyectos</span>
+            <span className="text-accent py-1">{dict.projects.title}</span>
           </h2>
           <p className="text-[clamp(0.95rem,1.2vw,1.1rem)] text-text-muted max-w-2xl mx-auto leading-relaxed">
-            De los que estoy más orgulloso
+            {dict.projects.subtitle}
           </p>
         </motion.div>
 
@@ -49,7 +53,7 @@ export function CaseStudies() {
                   <div className="w-12 h-12 flex items-center justify-center group-hover:-translate-y-1 transition-transform overflow-hidden font-semibold">
                     {project.image ? (
                       <img
-                        src={project.image}
+                        src={getAssetUrl(project.image)}
                         alt={project.title}
                         className="w-full h-full object-contain"
                       />
@@ -89,8 +93,8 @@ export function CaseStudies() {
 
         <div className="mt-[clamp(2.5rem,6vh,4rem)] flex justify-center">
           <Button asChild variant="outline" className="group h-auto py-[clamp(0.85rem,1.8vh,1.25rem)] px-[clamp(1.5rem,3vw,2rem)] rounded-lg text-text-primary shadow-sm text-sm md:text-base border-border hover:border-accent/40">
-            <Link href="/projects">
-              <span>Revisa los demás</span>
+            <Link href={`/${lang}/projects`}>
+              <span>{dict.projects.viewMore}</span>
               <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>
