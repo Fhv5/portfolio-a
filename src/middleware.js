@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 const defaultLocale = 'es';
 const locales = ['es', 'en'];
 
-export function proxy(request) {
+export function middleware(request) {
   const { pathname } = request.nextUrl;
   
   // Skip public assets and API
@@ -34,3 +34,5 @@ export const config = {
     '/((?!_next|favicon.svg|[^/]+\\.[\\w]+).*)',
   ],
 };
+
+export const runtime = 'edge';
