@@ -7,8 +7,10 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Button } from "@/components/ui/button";
+import { useI18n } from "@/lib/i18n-context";
 
 export function Navbar() {
+  const { dict, lang } = useI18n();
   const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,9 +23,9 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Sobre mí", href: "#about" },
-    { name: "Proyectos", href: "#work" },
-    { name: "Experiencia", href: "#experience" },
+    { name: dict.navbar.about, href: "#about" },
+    { name: dict.navbar.projects, href: "#work" },
+    { name: dict.navbar.experience, href: "#experience" },
   ];
 
   const pathname = usePathname();
@@ -32,8 +34,11 @@ export function Navbar() {
   const handleScrollTo = (e, targetId) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    if (pathname !== "/") {
-      router.push("/" + targetId);
+    // Verificar si estamos en la raíz (ej: /es o /en o /)
+    const isHome = pathname === `/${lang}` || pathname === "/";
+    
+    if (!isHome) {
+      router.push(`/${lang}${targetId}`);
     } else {
       const elem = document.querySelector(targetId);
       if (elem) {
@@ -57,9 +62,9 @@ export function Navbar() {
       <div className="max-w-[var(--container-max-width)] mx-auto px-6 lg:px-8 h-[var(--header-height)] flex items-center justify-between w-full transition-all duration-300">
         <div className="flex-1 flex justify-start">
           <Link
-            href="/"
+            href={`/${lang}`}
             onClick={(e) => {
-              if (pathname === "/") {
+              if (pathname === `/${lang}` || pathname === "/") {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }
@@ -119,7 +124,7 @@ export function Navbar() {
             onClick={(e) => handleScrollTo(e, "#contact")}
             className="text-sm font-medium text-text-muted hover:text-accent transition-colors"
           >
-            Contacto
+            {dict.navbar.contact}
           </a>
         </div>
 
@@ -160,7 +165,7 @@ export function Navbar() {
                     onClick={(e) => handleScrollTo(e, "#contact")}
                     className="text-sm font-medium text-text-primary py-2 border-b border-border/50 focus:outline-none focus:bg-accent/10 focus:text-accent rounded-md px-2 transition-all cursor-pointer block"
                   >
-                    Contacto
+                    {dict.navbar.contact}
                   </a>
                 </DropdownMenu.Item>
 

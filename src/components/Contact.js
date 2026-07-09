@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import { Mail, Download } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
+import { useI18n } from "@/lib/i18n-context";
 
 export function Contact() {
+  const { dict } = useI18n();
+
   return (
     <section id="contact" className="py-[clamp(5rem,6vw,7rem)] px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
@@ -16,10 +19,10 @@ export function Contact() {
           className="mb-[clamp(3.5rem,4vw,4.5rem)] text-center"
         >
           <h2 className="text-[clamp(1.75rem,4.5vh,2.5rem)] font-extrabold tracking-tight flex items-center justify-center mb-[clamp(0.75rem,2.5vh,1.5rem)] leading-tight">
-            <span className="text-accent py-1">Contacto</span>
+            <span className="text-accent py-1">{dict.contact.title}</span>
           </h2>
           <p className="text-[clamp(0.95rem,1.2vw,1.1rem)] text-text-muted max-w-2xl mx-auto text-balance leading-relaxed">
-            Si quieres construir, optimizar o solo hacer algo juntos, hablame. Agradecería que no fuera para ofrecerme cambiar de compañía telefónica.
+            {dict.contact.subtitle}
           </p>
         </motion.div>
 

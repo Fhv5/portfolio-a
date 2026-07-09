@@ -4,8 +4,12 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { X, ChevronRight, ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import { useI18n } from "@/lib/i18n-context";
+import { getAssetUrl } from "@/lib/utils/assets";
 
 export function ProjectDetailDialog({ isOpen, onClose, project }) {
+  const { dict } = useI18n();
+
   if (!project) return null;
 
   return (
@@ -19,7 +23,7 @@ export function ProjectDetailDialog({ isOpen, onClose, project }) {
               <div className="w-12 h-12 flex items-center justify-center overflow-hidden shrink-0">
                 {project.image ? (
                   <img
-                    src={project.image}
+                    src={getAssetUrl(project.image)}
                     alt={project.title}
                     className="w-full h-full object-contain"
                   />
@@ -49,7 +53,7 @@ export function ProjectDetailDialog({ isOpen, onClose, project }) {
           <div className="p-6 md:p-8 overflow-y-auto custom-scrollbar flex-1 space-y-6">
             {/* Status Badge */}
             <div className="flex items-center gap-2">
-              <span className="text-xs font-mono font-bold text-text-muted uppercase tracking-wider">Estado:</span>
+              <span className="text-xs font-mono font-bold text-text-muted uppercase tracking-wider">{dict.projects.dialogStatus}</span>
               <span className={`text-xs font-sans px-2.5 py-0.5 rounded-full border font-semibold ${project.statusColor}`}>
                 {project.status}
               </span>
@@ -57,7 +61,7 @@ export function ProjectDetailDialog({ isOpen, onClose, project }) {
 
             {/* Context and Description */}
             <div>
-              <h4 className="text-base font-bold text-text-primary mb-2">Contexto y Descripción</h4>
+              <h4 className="text-base font-bold text-text-primary mb-2">{dict.projects.dialogContext}</h4>
               <p className="text-text-muted leading-relaxed text-sm md:text-base">
                 {project.description}
               </p>
@@ -66,7 +70,7 @@ export function ProjectDetailDialog({ isOpen, onClose, project }) {
             {/* Technical Challenge */}
             {project.challenge && (
               <div>
-                <h4 className="text-base font-bold text-text-primary mb-2">Reto Técnico / Decisiones</h4>
+                <h4 className="text-base font-bold text-text-primary mb-2">{dict.projects.dialogChallenge}</h4>
                 <p className="text-text-muted leading-relaxed text-sm">
                   {project.challenge}
                 </p>
@@ -76,7 +80,7 @@ export function ProjectDetailDialog({ isOpen, onClose, project }) {
             {/* Specifications & Features */}
             {project.specs && project.specs.length > 0 && (
               <div>
-                <h4 className="text-base font-bold text-text-primary mb-2">Características Principales</h4>
+                <h4 className="text-base font-bold text-text-primary mb-2">{dict.projects.dialogFeatures}</h4>
                 <ul className="space-y-2.5">
                   {project.specs.map((spec, i) => (
                     <li key={i} className="flex items-start text-sm text-text-muted leading-relaxed">
@@ -90,7 +94,7 @@ export function ProjectDetailDialog({ isOpen, onClose, project }) {
 
             {/* Tech Stack */}
             <div>
-              <h4 className="text-base font-bold text-text-primary mb-2">Stack Tecnológico</h4>
+              <h4 className="text-base font-bold text-text-primary mb-2">{dict.projects.dialogStack}</h4>
               <div className="flex flex-wrap gap-1.5">
                 {project.tags.map((tag, i) => (
                   <span key={i} className="text-xs font-medium text-text-primary bg-bg-primary border border-border px-2.5 py-1 rounded">
@@ -111,7 +115,7 @@ export function ProjectDetailDialog({ isOpen, onClose, project }) {
                     className="inline-flex items-center gap-2 px-4 py-2 bg-bg-surface hover:bg-bg-primary text-text-primary border border-border font-sans font-bold text-sm rounded-lg transition-colors"
                   >
                     <FaGithub className="w-4 h-4" />
-                    <span>Ver en GitHub</span>
+                    <span>{dict.projects.viewGithub}</span>
                     <ExternalLink className="w-3.5 h-3.5 text-text-muted" />
                   </a>
                 )}
@@ -123,7 +127,7 @@ export function ProjectDetailDialog({ isOpen, onClose, project }) {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2 bg-accent hover:bg-accent-alt text-white font-sans font-bold text-sm rounded-lg transition-colors shadow-sm"
                   >
-                    <span>Ver Demo</span>
+                    <span>{dict.projects.viewDemo}</span>
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 )}

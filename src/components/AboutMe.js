@@ -19,6 +19,8 @@ import {
   SiVuedotjs,
   SiNestjs
 } from "react-icons/si";
+import { useI18n } from "@/lib/i18n-context";
+import { getAssetUrl } from "@/lib/utils/assets";
 
 const TechCard = ({ skill, idx, isNew = false }) => (
   <motion.div
@@ -42,18 +44,11 @@ const TechCard = ({ skill, idx, isNew = false }) => (
 );
 
 export function AboutMe() {
+  const { dict } = useI18n();
   const [showAllTech, setShowAllTech] = useState(false);
   const [currentFact, setCurrentFact] = useState(0);
 
-  const funFacts = [
-    "De pequeño tuve 9 gatos. Ahora les tengo alergia.",
-    "Estudié psicología año y medio antes de cambiarme a informática.",
-    "No soy fan de las mates, pero mi tesis fue matemática pura y dura.",
-    "Autoproclamado mejor jugador de Age of Mythology en Iquique.",
-    "Con excepción de la pizza, no me agrada mucho la comida italiana.",
-    "Creo que sería buen cantante.",
-    "Puedo tocar Ka$cade de Animals as Leaders al 80% de velocidad.",
-  ];
+  const funFacts = dict.about.funFacts;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -92,7 +87,7 @@ export function AboutMe() {
           className="mb-[clamp(3.5rem,4vw,4.5rem)] text-center"
         >
           <h2 className="text-[clamp(1.75rem,4.5vh,2.5rem)] font-extrabold tracking-tight flex items-center justify-center mb-[clamp(1rem,2vw,1.5rem)] leading-tight text-balance">
-            <span className="text-accent py-1">Sobre mí</span>
+            <span className="text-accent py-1">{dict.about.title}</span>
           </h2>
         </motion.div>
 
@@ -105,18 +100,21 @@ export function AboutMe() {
           >
             <div className="space-y-[clamp(1.25rem,2vw,1.75rem)] text-[clamp(0.95rem,1.2vw,1.1rem)] text-text-muted leading-relaxed text-justify lg:text-left">
               <p>
-                ¡Hola! Soy <span className="text-text-primary font-semibold">Fabián</span>, 
-                Ingeniero Civil en Informática con foco en <span className="text-accent font-medium">Backend</span>, <span className="text-accent font-medium">Arquitectura Cloud</span> y <span className="text-accent font-medium">DevOps</span>.
-                Me gradué con Máxima Distinción de la Universidad de Tarapacá 
-                (grande la UTA), donde también fui ayudante / tutor de varias cátedras.
+                {dict.about.p1_1}<span className="text-text-primary font-semibold">Fabián</span>
+                {dict.about.p1_2}<span className="text-accent font-medium">Backend</span>{dict.about.p1_3}
+                <span className="text-accent font-medium">Cloud</span>{dict.about.p1_4}
+                <span className="text-accent font-medium">DevOps</span>
+                {dict.about.p1_5}
               </p>
               <p>
-                Recientemente fui seleccionado como uno de los becados del programa <span className="text-text-primary font-semibold"><a href="https://talentodigitalparachile.cl/crece-con-google/" target="_blank">Becas Google 2026</a></span>, y actualmente estoy cursando las certificaciones en <span className="text-accent font-medium">Ciberseguridad</span> y en <span className="text-accent font-medium">Análisis de Datos</span> para expandir mis horizontes. En paralelo, exploro el uso de IA en aplicaciones con <span className="text-accent font-medium">Spring AI</span> y <span className="text-accent font-medium">LangChain</span>. 
-                {/* Actualmente estoy estudiando para certificarme como <span className="text-accent font-medium">AWS Solutions Architect Associate</span>  y explorando la implementación de sistemas
-                basados en IA con <span className="text-accent font-medium">Spring AI</span> y <span className="text-accent font-medium">LangChain</span>. */}
+                {dict.about.p2_1}<span className="text-text-primary font-semibold"><a href="https://talentodigitalparachile.cl/crece-con-google/" target="_blank">Becas Google 2026</a></span>{dict.about.p2_2}
+                <span className="text-accent font-medium">Cybersecurity</span>{dict.about.p2_3}
+                <span className="text-accent font-medium">Data Analytics</span>{dict.about.p2_4}
+                <span className="text-accent font-medium">Spring AI</span>{dict.about.p2_5}
+                <span className="text-accent font-medium">LangChain</span>{dict.about.p2_6}
               </p>
               <p>
-                Fuera del código: leo, toco guitarra (eléctrica, claro), entreno, ando en bici por la ciudad, y de vez en cuando me meto en problemas de geometría computacional. De hecho, mi proyecto de título fue sobre eso.
+                {dict.about.p3}
               </p>
             </div>
           </motion.div>
@@ -136,7 +134,7 @@ export function AboutMe() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent opacity-30 group-hover:opacity-50 transition-opacity z-10 pointer-events-none" />
                   
                   <Image
-                    src="/profile.jpeg"
+                    src={getAssetUrl("/profile.jpeg")}
                     alt="Fabián Henry Vilaxa"
                     fill
                     sizes="(max-width: 400px) 100vw, 400px"
@@ -156,7 +154,7 @@ export function AboutMe() {
             className="w-full"
           >
             <div className="flex items-center mb-6 px-1">
-              <h4 className="text-sm font-mono text-text-muted uppercase tracking-widest">FUN FACTS</h4>
+              <h4 className="text-sm font-mono text-text-muted uppercase tracking-widest">{dict.about.funFactsTitle}</h4>
             </div>
             <div className="h-16 flex items-center bg-transparent border border-border/40 rounded-xl px-4 overflow-hidden">
               <AnimatePresence mode="wait">
@@ -182,12 +180,12 @@ export function AboutMe() {
             className="w-full"
           >
             <div className="flex items-center justify-between mb-6 px-1">
-              <h4 className="text-sm font-mono text-text-muted uppercase tracking-widest">MIS ARMAS FAVORITAS</h4>
+              <h4 className="text-sm font-mono text-text-muted uppercase tracking-widest">{dict.about.weaponsTitle}</h4>
               <button 
                 onClick={() => setShowAllTech(!showAllTech)}
                 className="text-xs font-bold text-accent hover:text-accent-alt transition-colors flex items-center gap-1 group outline-none"
               >
-                {showAllTech ? "Ver menos" : "Ver más"}
+                {showAllTech ? dict.about.seeLess : dict.about.seeMore}
                 {showAllTech ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
               </button>
             </div>
@@ -224,7 +222,7 @@ export function AboutMe() {
                         className="flex items-center gap-2 px-3 py-2 bg-bg-primary border border-border/40 rounded-xl text-text-muted hover:text-accent hover:border-accent/50 transition-all text-xs font-bold h-fit"
                       >
                         <ChevronUp className="w-3 h-3" />
-                        <span>Ocultar</span>
+                        <span>{dict.about.hide}</span>
                       </motion.button>
                     ]
                   ) : (
@@ -242,7 +240,7 @@ export function AboutMe() {
                       className="flex items-center gap-2 px-3 py-2 bg-bg-primary border border-border/40 rounded-xl text-text-muted hover:text-accent hover:border-accent/50 transition-all text-xs font-bold h-fit"
                     >
                       <Plus className="w-3 h-3" />
-                      <span>{otherTech.length}+ más</span>
+                      <span>{otherTech.length}+ {dict.about.more}</span>
                     </motion.button>
                   )}
                 </AnimatePresence>

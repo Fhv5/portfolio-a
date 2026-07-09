@@ -1,0 +1,126 @@
+{
+  "navbar": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Fabián Henry Vilaxa",
+    "subtitle": "Ingeniero Civil en Informática. Especializado en ",
+    "highlight": "Backend, Cloud Computing y DevOps.",
+    "subtitle2": " Me encanta innovar y hacer que las cosas funcionen solas una vez las construyo.",
+    "viewProjects": "Ve mis Proyectos",
+    "downloadCV": "Descarga mi CV"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "p1_1": "¡Hola! Soy ",
+    "p1_2": ", Ingeniero Civil en Informática con foco en ",
+    "p1_3": ", ",
+    "p1_4": " y ",
+    "p1_5": ". Me gradué con Máxima Distinción de la Universidad de Tarapacá (grande la UTA), donde también fui ayudante / tutor de varias cátedras.",
+    "p2_1": "Recientemente fui seleccionado como uno de los becados del programa ",
+    "p2_2": ", y actualmente estoy cursando las certificaciones en ",
+    "p2_3": " y en ",
+    "p2_4": " para expandir mis horizontes. En paralelo, exploro el uso de IA en aplicaciones con ",
+    "p2_5": " y ",
+    "p2_6": ".",
+    "p3": "Fuera del código: leo, toco guitarra (eléctrica, claro), entreno, ando en bici por la ciudad, y de vez en cuando me meto en problemas de geometría computacional. De hecho, mi proyecto de título fue sobre eso.",
+    "funFactsTitle": "FUN FACTS",
+    "funFacts": [
+      "De pequeño tuve 9 gatos. Ahora les tengo alergia.",
+      "Estudié psicología año y medio antes de cambiarme a informática.",
+      "No soy fan de las mates, pero mi tesis fue matemática pura y dura.",
+      "Autoproclamado mejor jugador de Age of Mythology en Iquique.",
+      "Con excepción de la pizza, no me agrada mucho la comida italiana.",
+      "Creo que sería buen cantante.",
+      "Puedo tocar Ka$cade de Animals as Leaders al 80% de velocidad."
+    ],
+    "weaponsTitle": "MIS ARMAS FAVORITAS",
+    "seeMore": "Ver más",
+    "seeLess": "Ver menos",
+    "hide": "Ocultar",
+    "more": "más"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "De los que estoy más orgulloso",
+    "viewMore": "Revisa los demás",
+    "pageTitle": "Mis Proyectos",
+    "pageSubtitle": "Un registro honesto de mis desarrollos técnicos, investigaciones científicas, utilidades y proyectos personales.",
+    "backHome": "Volver al inicio",
+    "searchPlaceholder": "Buscar por nombre, tecnología o rol...",
+    "clear": "Limpiar",
+    "notFound": "No se encontraron proyectos",
+    "searchHint": "Prueba buscando palabras como \"Spring Boot\", \"React\", \"Zustand\" o \"TypeScript\"",
+    "dialogStatus": "Estado:",
+    "dialogContext": "Contexto y Descripción",
+    "dialogChallenge": "Reto Técnico / Decisiones",
+    "dialogFeatures": "Características Principales",
+    "dialogStack": "Stack Tecnológico",
+    "viewGithub": "Ver en GitHub",
+    "viewDemo": "Ver Demo"
+  },
+  "experience": {
+    "title": "Experiencia y Estudios",
+    "subtitle": "En lo que he estado últimamente",
+    "items": [
+      {
+        "title": "Ingeniero de Software",
+        "company": "ValVilax",
+        "location": "Iquique, Chile",
+        "date": "Mar. 2026 – Presente",
+        "badge": "Freelance",
+        "description": [
+          "Liderazgo técnico en ciclo de vida completo de PWA para la gestión de reservas.",
+          "Implementación eficiente con GraalVM (<100MB RAM, arranque en ms), SQLite embebido y migraciones Flyway.",
+          "Despliegue Low Cost en AWS EC2 y Cloudflare Pages, con seguridad Nginx (SSL, Rate Limiting).",
+          "Cero Downtime desde lanzamiento a producción."
+        ]
+      },
+      {
+        "title": "Desarrollador y Analista Trainee",
+        "company": "Coordinación Nacional de Tecnología, MINEDUC",
+        "location": "Remoto, Santiago, Chile",
+        "date": "Ene. 2026 – Mar. 2026",
+        "badge": "Práctica Profesional",
+        "description": [
+          "Diseño e implementación de solución para mitigar vulnerabilidades críticas de seguridad en microservicios Spring Boot & Vue.",
+          "Resolución de deuda técnica en Sonarqube e implementación de automatización de pruebas con cobertura >93%.",
+          "Elaboración y ejecución del planes QA para funcionalidades recientemente implementadas.",
+          "Gestión end-to-end de requerimiento ágil: levantamiento con stakeholders, modelado BPMN y liderazgo de refinamientos técnicos y de negocio."
+        ]
+      },
+      {
+        "title": "Soporte Administrativo de Respaldos",
+        "company": "Asesorías Arsbyr",
+        "location": "Providencia, Santiago, Chile",
+        "date": "Dic. 2023 – Mar. 2024",
+        "badge": "Práctica Profesional",
+        "description": [
+          "Responsable de garantizar la continuidad operacional gestionando plataformas de respaldo corporativas (Veeam, Data Protector, NetVault, vRanger).",
+          "Gestión proactiva de incidencias y recuperaciones de archivos y maquinas virtuales para múltiples clientes.",
+          "Desarrollo de pipelines en Python para la extracción, procesamiento y visualización de datos de backups y cintas para optimización de ciclos.",
+          "Estandarización de documentación técnica para el monitoreo de respaldos en NetVault para mejorar la calidad de los SLAs."
+        ]
+      },
+      {
+        "title": "Ingeniero Civil en Informática",
+        "company": "Universidad de Tarapacá",
+        "location": "Iquique, Chile",
+        "date": "2020 – 2026",
+        "description": [
+          "Graduado con Máxima Distinción (Nota 6.5 / 7.0).",
+          "Speaker en el 1er Congreso Estudiantil de Ingeniería (CEI 2024). Presenté el primer caso de éxito de implementación de metodologías ágiles (Scrum) en la formación académica de la Sede Iquique",
+          "Ayudante de Tecnologías Web, Programación Avanzada e Investigación Operativa.",
+          "A veces me invitan a dar charlas."
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Si quieres construir, optimizar o solo hacer algo juntos, hablame. Agradecería que no fuera para ofrecerme cambiar de compañía telefónica."
+  }
+}

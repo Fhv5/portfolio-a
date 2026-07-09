@@ -1,9 +1,15 @@
 import { ProjectsClient } from "@/components/ProjectsClient";
+import { getDictionary } from "@/dictionaries";
 
-export const metadata = {
-  title: "Proyectos | Fabián Henry",
-  description: "Catálogo completo de proyectos técnicos y casos de estudio de Fabián Henry, Ingeniero Civil en Informática.",
-};
+export async function generateMetadata({ params }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  
+  return {
+    title: dict.projects.pageTitle + " | Fabián Henry",
+    description: dict.projects.pageSubtitle,
+  };
+}
 
 export default function ProjectsPage() {
   return (
