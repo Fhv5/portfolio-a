@@ -47,7 +47,7 @@ export const projectsData = {
       status: "Terminado",
       statusColor: "text-blue-500 bg-blue-500/10 border-blue-500/20",
       role: "Desarrollador",
-      description: "Herramienta de aprendizaje de idiomas y accesibilidad creada para aprender griego mediante inmersión con el juego Age of Mythology. Permite capturar en tiempo real textos de la UI para recibir traducciones literales y contextuales junto con el audio de pronunciación en una ventana flotante, todo de forma externa para no generar sospechas de trampas en el juego.",
+      description: "Herramienta creada para aprender griego mediante inmersión con el juego Age of Mythology. Permite capturar textos de la UI mediante lectura del portapapeles para recibir traducciones literales y contextuales junto con el audio de pronunciación en una ventana flotante.",
       challenge: "Optimización de la latencia de arranque en frío de los modelos locales de Ollama tras periodos prolongados de inactividad.",
       specs: [
         "Ventana flotante de overlay que permanece por encima del juego.",
@@ -186,7 +186,7 @@ export const projectsData = {
       status: "Finished",
       statusColor: "text-blue-500 bg-blue-500/10 border-blue-500/20",
       role: "Developer",
-      description: "Language learning and accessibility tool created to learn Greek through immersion with the game Age of Mythology. It captures UI text in real-time to receive literal and contextual translations along with pronunciation audio in a floating window, entirely external to avoid triggering anti-cheat systems.",
+      description: "Language learning tool created to learn Greek through immersion with the game Age of Mythology. It captures UI text from the clipboard to receive literal and contextual translations using AI and Google Translate as fallback, along with pronunciation audio in a floating window.",
       challenge: "Optimizing the cold-start latency of local Ollama models after prolonged periods of inactivity.",
       specs: [
         "Floating overlay window that stays on top of the game.",
