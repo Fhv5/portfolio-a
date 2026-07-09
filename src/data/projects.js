@@ -176,7 +176,7 @@ export const projectsData = {
       ],
       tags: ["Next.js 16", "TypeScript", "Zustand", "Math.js", "ML-Matrix", "KaTeX", "Cloudflare Pages"],
       image: "/university_of_tarapaca_logo.png",
-      githubUrl: "https://github.com/Fhv5/packings",
+      githubUrl: "https://github.com/Fhv5/disk_packings_visualizer",
       demoUrl: "https://packings.fhenry.site/",
       featured: true
     },
