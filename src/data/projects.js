@@ -2,7 +2,7 @@ export const projectsData = {
   es: [
     {
       id: "valvilax",
-      title: "Valvilax Reservas",
+      title: "ValVilax Reservas",
       status: "En Producción",
       statusColor: "text-emerald-500 bg-emerald-500/10 border-emerald-500/20",
       role: "Arquitecto / Full-Stack Dev",
@@ -35,7 +35,7 @@ export const projectsData = {
         "Control preciso de coordenadas con soporte de expresiones matemáticas.",
         "Exportación masiva de datos en formato JSON con filtros activos."
       ],
-      tags: ["Next.js 16", "TypeScript", "Zustand", "Math.js", "ML-Matrix", "KaTeX", "Cloudflare Pages"],
+      tags: ["Next.js", "TypeScript", "Zustand", "Math.js", "ML-Matrix", "KaTeX", "Cloudflare Pages"],
       image: "/university_of_tarapaca_logo.png",
       githubUrl: "https://github.com/Fhv5/packings",
       demoUrl: "https://packings.fhenry.site/",
@@ -141,7 +141,7 @@ export const projectsData = {
   en: [
     {
       id: "valvilax",
-      title: "Valvilax Bookings",
+      title: "ValVilax Bookings",
       status: "In Production",
       statusColor: "text-emerald-500 bg-emerald-500/10 border-emerald-500/20",
       role: "Architect / Full-Stack Dev",
