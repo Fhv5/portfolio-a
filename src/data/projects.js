@@ -97,7 +97,7 @@ export const projectsData = {
         "Módulo de metas de ahorro con visualización del progreso.",
         "Aislamiento estricto de datos de usuario en base de datos mediante seguridad JWT."
       ],
-      tags: ["Java 25", "Spring Boot 4.0.5", "PostgreSQL", "Flyway", "JWT Auth", "Docker Compose"],
+      tags: ["Java", "Spring Boot", "PostgreSQL", "Flyway", "JWT Auth", "Docker Compose"],
       githubUrl: "https://github.com/Fhv5/finsight",
       demoUrl: null,
       featured: false
@@ -174,7 +174,7 @@ export const projectsData = {
         "Precise coordinate control with support for mathematical expressions.",
         "Massive data export in JSON format with active filters."
       ],
-      tags: ["Next.js 16", "TypeScript", "Zustand", "Math.js", "ML-Matrix", "KaTeX", "Cloudflare Pages"],
+      tags: ["Next.js", "TypeScript", "Zustand", "Math.js", "ML-Matrix", "KaTeX", "Cloudflare Pages"],
       image: "/university_of_tarapaca_logo.png",
       githubUrl: "https://github.com/Fhv5/disk_packings_visualizer",
       demoUrl: "https://packings.fhenry.site/",
@@ -236,7 +236,7 @@ export const projectsData = {
         "Savings goals module with progress visualization.",
         "Strict user data isolation in the database via JWT security."
       ],
-      tags: ["Java 25", "Spring Boot 4.0.5", "PostgreSQL", "Flyway", "JWT Auth", "Docker Compose"],
+      tags: ["Java", "Spring Boot", "PostgreSQL", "Flyway", "JWT Auth", "Docker Compose"],
       githubUrl: "https://github.com/Fhv5/finsight",
       demoUrl: null,
       featured: false
